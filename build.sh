@@ -5,10 +5,21 @@ cd ./build
 compiler=$ndk_dir/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/bin
 sysroot=$ndk_dir/sysroot
 platform=$ndk_dir/platforms/android-9/arch-arm/
-export PATH=$PATH:$compiler # :$sysroot:$platform
-echo $PATH
+export PATH=$PATH:$compiler:$sysroot:$platform
+# echo $PATH
+
+# 这个编译出来的还是linux类型的so，带软链接，Android无法使用
+# cmake ..    -DCMAKE_TOOLCHAIN_FILE=../XCompile-Android.txt \
+#             -DHOST=arm-linux-androideabi \
+#             -DCMAKE_BUILD_TYPE=Release
+
 cmake ..    -DCMAKE_TOOLCHAIN_FILE=../XCompile-Android.txt \
-            -DHOST=arm-linux-androideabi \
-            -DCMAKE_BUILD_TYPE=Release
+            -DANDROID_ABI="armeabi-v7a" \
+            -DANDROID_NDK=$ndk_dir \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DANDROID_PLATFORM=android-22 \
+
 make
- 
+tar -cvf lib.zip ./libopenal.so # ./libopenal.so.1 ./libopenal.so.1.19.1
+gzip lib.zip
+echo "if you use vscode, please download lib.zip"
