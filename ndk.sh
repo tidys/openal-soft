@@ -3,7 +3,7 @@
 sudo apt-get install gcc automake autoconf libtool make gcc-multilib
 
 # download ndk
-version=r18b
+version=r14b
 ndk_dir=$(pwd)/android-ndk-${version}
 if [ ! -d "${ndk_dir}" ]; then
     echo "not exists ndk"
