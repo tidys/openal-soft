@@ -13,12 +13,6 @@ SET(CMAKE_C_COMPILER "${HOST}-gcc")
 SET(CMAKE_CXX_COMPILER "${HOST}-g++")
 SET(CMAKE_RC_COMPILER "${HOST}-windres")
 
-# here is the target environment located
-SET(CMAKE_FIND_ROOT_PATH "SET THIS TO THE NDK TOOLCHAIN'S INSTALL PATH")
-
-# here is where stuff gets installed to
-SET(CMAKE_INSTALL_PREFIX "${CMAKE_FIND_ROOT_PATH}" CACHE STRING "Install path prefix, prepended onto install directories." FORCE)
-
 # adjust the default behaviour of the FIND_XXX() commands:
 # search headers and libraries in the target environment, search 
 # programs in the host environment
