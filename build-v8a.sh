@@ -10,12 +10,14 @@ export PATH=$PATH:$compiler:$sysroot:$platform
 cmake ..    -DCMAKE_TOOLCHAIN_FILE=../XCompile-Android.txt \
             -DANDROID_ABI="arm64-v8a" \
             -DHOST=aarch64-linux-android \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DCMAKE_INSTALL_PREFIX=$(pwd)/android/arm64-v8a \
             -DCMAKE_SYSROOT=$platform \
             -DANDROID_NDK=$ndk_dir \
             -DCMAKE_BUILD_TYPE=Release \
             -DANDROID_PLATFORM=android-21 \
 
-make
+sudo make install
 tar -cvf lib.zip ./libopenal.so  ./libopenal.so.1 ./libopenal.so.1.19.1
 gzip lib.zip
 echo "if you use vscode, please download lib.zip"
