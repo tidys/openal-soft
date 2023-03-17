@@ -9,4 +9,5 @@ win64build
 CMakeLists.txt.user*
 android-ndk-r14b/
 android-ndk-r20b/
+android-ndk-r22b/
 android/
