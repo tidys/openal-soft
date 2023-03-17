@@ -8,3 +8,4 @@ win64build
 ## qt-creator
 CMakeLists.txt.user*
 android-ndk-r14b/
+android/
