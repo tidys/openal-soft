@@ -2,7 +2,7 @@ ndk_root=$(pwd)/android-ndk-r22b
 prefix_root=$(pwd)/android
 rm -rf $prefix_root
 version=1.22.0
-prefix_root+=$version
+prefix_root=$prefix_root/$version
 
 for abi in arm64-v8a armeabi-v7a
 do 
