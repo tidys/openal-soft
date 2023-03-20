@@ -6,7 +6,7 @@ prefix_root=$prefix_root/$version
 
 
 build(){
-    for build_type in Debug #Release MinSizeRel
+    for build_type in MinSizeRel Debug Release
     do
         echo begin build [$abi / $build_type] ...
         rm -rf ./build
@@ -77,7 +77,7 @@ build(){
 # abi=armeabi-v7a
 # build 
 
-toolchains_prefix=aarch64-linux-android
-arch=arm64
-abi=arm64-v8a
-build
+# toolchains_prefix=aarch64-linux-android
+# arch=arm64
+# abi=arm64-v8a
+# build
