@@ -1,4 +1,5 @@
 build*/
+apple/
 winbuild/
 win64build/
 openal-soft.kdev4
