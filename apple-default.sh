@@ -10,6 +10,7 @@ do
     cd build
     install_prefix=$prefix_root/$build_type
 
+    # 没有使用toolchain, 并不通用
     cmake .. \
         -DCMAKE_INSTALL_PREFIX=$install_prefix \
         -DCMAKE_BUILD_TYPE=$build_type \
